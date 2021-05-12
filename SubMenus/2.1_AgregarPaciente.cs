@@ -264,7 +264,7 @@ namespace ThootDentist
 
 
                 //String que contiene la cadena de SQL
-                string Comando = "SELECT MAX(ID_Cliente) as Cantidad from Pacientes;";
+                string Comando = "SELECT COUNT(ID_Cliente) as Cantidad from Pacientes;";
                 //Llama al metodo EjecutarComando_Datos de la instancia de Conexion y trae una tabla con los datos
                 DataTable Tabla = Conex.EjecutarComando_Datos(Comando);
                 //Separa los datos de la Tabla para pasarslos a la variable de Cantidad

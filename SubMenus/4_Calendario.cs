@@ -39,7 +39,15 @@ namespace ThootDentist
             string Fecha = Calendario3.SelectionStart.ToString("yyyy/MM/dd");
 
 
-            Query = "SELECT C.ID_Cita, C.Hora, CONCAT(P.Nombres,' ',P.Apellido_Paterno,' ',P.Apellido_Materno) AS 'Nombre Completo' FROM citas C, pacientes P where(C.ID_Cliente = P.ID_Cliente AND C.Fecha = '" + Fecha + "');";
+            Query = "SELECT citas.ID_Cita,citas.Hora,CONCAT(Pacientes.Nombres, ' ', Pacientes.Apellido_Paterno, ' ', Pacientes.Apellido_Materno) AS 'Nombre Completo',\n" +
+                "CASE\n" +
+                "WHEN EstadoConsulta = 0 THEN 'Pendiente'\n" +
+                "WHEN EstadoConsulta = 1 THEN 'Realizada'\n" +
+                "END AS 'Estado'\n" +
+                "FROM Citas\n" +
+                "JOIN Pacientes ON Citas.ID_Cliente = Pacientes.ID_Cliente\n" +
+                "JOIN tratamientos ON Citas.ID_Tratamienro = tratamientos.ID_Tratamiento\n" +
+                "WHERE Citas.Fecha = '"+ Fecha + "' AND Pacientes.Activo = 1";
             DataTable Tabla = SQL.EjecutarComando_Datos(Query);
 
             DataGridCalendario.DataSource = Tabla;

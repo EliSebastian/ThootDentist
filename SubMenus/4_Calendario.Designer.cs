@@ -79,6 +79,8 @@ namespace ThootDentist
             this.DataGridCalendario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DataGridCalendario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridCalendario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridCalendario.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DataGridCalendario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridCalendario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -99,6 +101,7 @@ namespace ThootDentist
             this.DataGridCalendario.Name = "DataGridCalendario";
             this.DataGridCalendario.ReadOnly = true;
             this.DataGridCalendario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridCalendario.RowHeadersVisible = false;
             this.DataGridCalendario.Size = new System.Drawing.Size(669, 475);
             this.DataGridCalendario.TabIndex = 16;
             // 

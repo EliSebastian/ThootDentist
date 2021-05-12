@@ -26,7 +26,6 @@ namespace ThootDentist
 
         string Query;
 
-        int Contador_Aprovadas = 0;
 
         int Hora;
 
@@ -44,7 +43,7 @@ namespace ThootDentist
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            Query = "SELECT MAX(ID_Cita)  AS 'Cantidad' FROM citas";
+            Query = "SELECT COUNT(ID_Cita)  AS 'Cantidad' FROM citas";
             DataTable ContadorCitas = SQL.EjecutarComando_Datos(Query);
                 
             //

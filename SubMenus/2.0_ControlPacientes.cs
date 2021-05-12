@@ -35,18 +35,18 @@ namespace ThootDentist
             
             if (TxtBx_Buscar.Text == " " || TxtBx_Buscar.Text == "" || TxtBx_Buscar.Text == null)
             {
-                Query = "SELECT ID_Cliente, Nombres , Apellido_Paterno, Apellido_Materno FROM Pacientes";
+                Query = "SELECT ID_Cliente, Nombres , Apellido_Paterno, Apellido_Materno FROM Pacientes WHERE (Activo = 1)";
             }
             else if(TxtBx_Buscar.Text == "Buscar")
             {
-                Query = "SELECT ID_Cliente, Nombres , Apellido_Paterno, Apellido_Materno FROM Pacientes";
+                Query = "SELECT ID_Cliente, Nombres , Apellido_Paterno, Apellido_Materno FROM Pacientes WHERE (Activo = 1)";
             }
             else
             {
-                Query = "SELECT ID_Cliente, Nombres , Apellido_Paterno, Apellido_Materno FROM Pacientes WHERE (Nombres LIKE '%" + TxtBx_Buscar.Text + "%' OR Apellido_Paterno like '%" + TxtBx_Buscar.Text + "%' OR Apellido_Materno LIKE '%" + TxtBx_Buscar.Text + "%'); ";
+                Query = "SELECT ID_Cliente, Nombres , Apellido_Paterno, Apellido_Materno FROM Pacientes WHERE (Nombres LIKE '%" + TxtBx_Buscar.Text + "%' OR Apellido_Paterno like '%" + TxtBx_Buscar.Text + "%' OR Apellido_Materno LIKE '%" + TxtBx_Buscar.Text + "%') AND (Activo = 1) ";
             }
 
-            DataGrid.DataSource = SQL.EjecutarComando_Datos(Query);
+            DataGridPacientes.DataSource = SQL.EjecutarComando_Datos(Query);
         }
         //METODOS CONTROLADOS POR EVENTOS
 
@@ -85,12 +85,16 @@ namespace ThootDentist
 
         private void Btn_Borrar_Click(object sender, EventArgs e)
         {
-            string ID = DataGrid.Rows[DataGrid.CurrentRow.Index].Cells[0].Value.ToString();
+            string ID = DataGridPacientes.Rows[DataGridPacientes.CurrentRow.Index].Cells[0].Value.ToString();
 
             Pruebas.Text = ID;
 
-            Query = "delete from pacientes where(ID_Cliente = '"+ ID +"')";
-            SQL.EjecutarComandoInsertar(Query);
+            if (MessageBox.Show("¿Esta seguro de borrar este registro?", "Advertencia", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                Query = "UPDATE pacientes set Activo = 0 WHERE(ID_Cliente = " + ID + ")";
+                SQL.EjecutarComandoInsertar(Query);
+            }
+            
 
             LlenarDataGrid();
         }

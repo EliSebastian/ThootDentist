@@ -31,18 +31,21 @@ namespace ThootDentist
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlPacientes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelUp = new System.Windows.Forms.Panel();
             this.Title = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.TxtBx_Buscar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.DataGrid = new System.Windows.Forms.DataGridView();
             this.Btn_Agregar = new Bunifu.Framework.UI.BunifuTileButton();
             this.Btn_Borrar = new Bunifu.Framework.UI.BunifuTileButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.holaMundoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Pruebas = new System.Windows.Forms.Label();
+            this.DataGridPacientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.PanelUp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridPacientes)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelUp
@@ -94,20 +97,6 @@ namespace ThootDentist
             this.TxtBx_Buscar.Text = "Buscar";
             this.TxtBx_Buscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtBx_Buscar.OnValueChanged += new System.EventHandler(this.TxtBx_Buscar_OnValueChanged);
-            // 
-            // DataGrid
-            // 
-            this.DataGrid.AllowUserToAddRows = false;
-            this.DataGrid.AllowUserToDeleteRows = false;
-            this.DataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid.Location = new System.Drawing.Point(12, 95);
-            this.DataGrid.Name = "DataGrid";
-            this.DataGrid.ReadOnly = true;
-            this.DataGrid.Size = new System.Drawing.Size(826, 475);
-            this.DataGrid.TabIndex = 3;
             // 
             // Btn_Agregar
             // 
@@ -173,16 +162,60 @@ namespace ThootDentist
             this.Pruebas.TabIndex = 7;
             this.Pruebas.Text = "label1";
             // 
+            // DataGridPacientes
+            // 
+            this.DataGridPacientes.AllowUserToAddRows = false;
+            this.DataGridPacientes.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridPacientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridPacientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.DataGridPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridPacientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridPacientes.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DataGridPacientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataGridPacientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(91)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(128)))), ((int)(((byte)(121)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridPacientes.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridPacientes.DoubleBuffered = true;
+            this.DataGridPacientes.EnableHeadersVisualStyles = false;
+            this.DataGridPacientes.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(91)))), ((int)(((byte)(86)))));
+            this.DataGridPacientes.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.DataGridPacientes.Location = new System.Drawing.Point(12, 95);
+            this.DataGridPacientes.MultiSelect = false;
+            this.DataGridPacientes.Name = "DataGridPacientes";
+            this.DataGridPacientes.ReadOnly = true;
+            this.DataGridPacientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridPacientes.RowHeadersVisible = false;
+            this.DataGridPacientes.Size = new System.Drawing.Size(826, 475);
+            this.DataGridPacientes.TabIndex = 16;
+            // 
             // ControlPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(982, 582);
+            this.Controls.Add(this.DataGridPacientes);
             this.Controls.Add(this.Pruebas);
             this.Controls.Add(this.Btn_Borrar);
             this.Controls.Add(this.Btn_Agregar);
-            this.Controls.Add(this.DataGrid);
             this.Controls.Add(this.TxtBx_Buscar);
             this.Controls.Add(this.PanelUp);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,8 +225,8 @@ namespace ThootDentist
             this.Text = "ControlPacientes";
             this.PanelUp.ResumeLayout(false);
             this.PanelUp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridPacientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,11 +237,11 @@ namespace ThootDentist
         private System.Windows.Forms.Panel PanelUp;
         private Bunifu.Framework.UI.BunifuCustomLabel Title;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtBx_Buscar;
-        private System.Windows.Forms.DataGridView DataGrid;
         private Bunifu.Framework.UI.BunifuTileButton Btn_Agregar;
         private Bunifu.Framework.UI.BunifuTileButton Btn_Borrar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem holaMundoToolStripMenuItem;
         private System.Windows.Forms.Label Pruebas;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid DataGridPacientes;
     }
 }

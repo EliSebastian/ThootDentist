@@ -13,13 +13,13 @@ namespace ThootDentist
         public Form_AgendarCita()
         {
             InitializeComponent();
-            string Query = "SELECT Nombres , Apellido_Paterno, Apellido_Materno, ID_Cliente FROM Pacientes";
+            string Query = "SELECT Nombres , Apellido_Paterno, Apellido_Materno, ID_Cliente FROM Pacientes WHERE (Activo = 1)";
             DataGrid.DataSource = SQL.EjecutarComando_Datos(Query);
 
 
             //Me Pasa los datos de las Citas del paciente al DataGrid
             
-            Query = "SELECT tratamientos.Nombre_Tratamiento, citas.Fecha,citas.Hora, citas.Comentario FROM citas  JOIN pacientes on citas.ID_Cliente = pacientes.ID_Cliente JOIN tratamientos on citas.ID_Tratamienro = tratamientos.ID_Tratamiento WHERE(citas.ID_Cliente = '0')";
+            Query = "SELECT tratamientos.Nombre_Tratamiento, citas.Fecha,citas.Hora, citas.Comentario FROM citas  JOIN pacientes on citas.ID_Cliente = pacientes.ID_Cliente JOIN tratamientos on citas.ID_Tratamienro = tratamientos.ID_Tratamiento WHERE(citas.ID_Cliente = '0') AND (pacientes.Activo = 1)";
             DataGridCitas.DataSource = SQL.EjecutarComando_Datos(Query);
         }
         //Destructor de la clase
@@ -44,11 +44,11 @@ namespace ThootDentist
             Contador++;
             if (TxtBox_Buscar.Text == " " || TxtBox_Buscar.Text == "" || TxtBox_Buscar.Text == null)
             {
-                Query = "SELECT Nombres, Apellido_Paterno, Apellido_Materno, ID_Cliente FROM Pacientes";
+                Query = "SELECT Nombres, Apellido_Paterno, Apellido_Materno, ID_Cliente FROM Pacientes WHERE (Activo = 1)";
             }
             else
             {
-                Query = "SELECT Nombres, Apellido_Paterno, Apellido_Materno, ID_Cliente FROM Pacientes WHERE (Nombres LIKE '%" + TxtBox_Buscar.Text + "%' OR Apellido_Paterno like '%" + TxtBox_Buscar.Text + "%' OR Apellido_Materno LIKE '%" + TxtBox_Buscar.Text + "%'); ";
+                Query = "SELECT Nombres, Apellido_Paterno, Apellido_Materno, ID_Cliente FROM Pacientes WHERE (Nombres LIKE '%" + TxtBox_Buscar.Text + "%' OR Apellido_Paterno like '%" + TxtBox_Buscar.Text + "%' OR Apellido_Materno LIKE '%" + TxtBox_Buscar.Text + "%') AND (Activo = 1)";
             }
 
             DataGrid.DataSource = SQL.EjecutarComando_Datos(Query);

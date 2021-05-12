@@ -119,7 +119,7 @@ namespace ThootDentist
             this.Btn_AgendarCita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(91)))), ((int)(((byte)(86)))));
             this.Btn_AgendarCita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Btn_AgendarCita.BorderRadius = 7;
-            this.Btn_AgendarCita.ButtonText = "Agendar Cita";
+            this.Btn_AgendarCita.ButtonText = "Control de Citas";
             this.Btn_AgendarCita.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_AgendarCita.DisabledColor = System.Drawing.Color.Gray;
             this.Btn_AgendarCita.Iconcolor = System.Drawing.Color.Transparent;
@@ -142,7 +142,7 @@ namespace ThootDentist
             this.Btn_AgendarCita.selected = false;
             this.Btn_AgendarCita.Size = new System.Drawing.Size(194, 48);
             this.Btn_AgendarCita.TabIndex = 6;
-            this.Btn_AgendarCita.Text = "Agendar Cita";
+            this.Btn_AgendarCita.Text = "Control de Citas";
             this.Btn_AgendarCita.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Btn_AgendarCita.Textcolor = System.Drawing.Color.White;
             this.Btn_AgendarCita.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
