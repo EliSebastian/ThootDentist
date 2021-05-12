@@ -92,7 +92,7 @@ namespace ThootDentist
 
 
                 //Me Pasa los datos de las Citas del paciente al DataGrid
-                Pruebas.Text = Index;
+                //Pruebas.Text = Index;
                 Query = "SELECT tratamientos.Nombre_Tratamiento, citas.Fecha,citas.Hora, citas.Comentario FROM citas  JOIN pacientes on citas.ID_Cliente = pacientes.ID_Cliente JOIN tratamientos on citas.ID_Tratamienro = tratamientos.ID_Tratamiento WHERE(citas.ID_Cliente = '"+ Index +"')";
                 DataGridCitas.DataSource = SQL.EjecutarComando_Datos(Query);
 

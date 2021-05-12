@@ -21,8 +21,10 @@ namespace ThootDentist
             FormAncho = this.ClientSize.Width;
             FormAlto = this.ClientSize.Height;
 
+            /*
             Lbl_Ancho.Text = "Ancho: " + FormAncho;
             LbL_Alto.Text = "Alto: " + FormAlto;
+            */
 
             LocationX = PanelContenedor.Location.X;
             LocationY = PanelContenedor.Location.Y;
@@ -147,8 +149,10 @@ namespace ThootDentist
             FormAncho = this.ClientSize.Width;
             FormAlto = this.ClientSize.Height;
             /*Escriben en pnatalla las variables anteriores*/
+            /*
             Lbl_Ancho.Text = "Ancho: " + FormAncho;
             LbL_Alto.Text = "Alto: " + FormAlto;
+            */
             
             /*Redimenciona el Panel principal (PanelContenedor)*/
             //PanelContenedor.Size = new Size(FormAncho-12-LocationX,PanelContenedor.Height);
@@ -189,9 +193,10 @@ namespace ThootDentist
 
             FormAncho = this.ClientSize.Width;
             FormAlto = this.ClientSize.Height;
-
+            /*
             Lbl_Ancho.Text = "Ancho: " + FormAncho;
             LbL_Alto.Text = "Alto: " + FormAlto;
+            */
 
             //PanelContenedor.Size = new Size(FormAncho - 12 - LocationX, PanelContenedor.Height);
 

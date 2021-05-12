@@ -16,7 +16,7 @@ namespace ThootDentist
         public AgendarCita(string IDCliente)
         {
             InitializeComponent();
-            Pruebas.Text = IDCliente;
+            //Pruebas.Text = IDCliente;
             ID = IDCliente;
             LlenarTratamientos();
         }
@@ -50,46 +50,51 @@ namespace ThootDentist
             long Cantidad = Convert.ToInt64(ContadorCitas.Rows[0]["Cantidad"].ToString());
             Cantidad++;
 
-                if (CmBox_Tratamientos.SelectedIndex == -1)
+            if (CmBox_Tratamientos.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se ha sleccionado el Tratamiento");
+            }
+            else if (CmBox_Hora.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se ha seleccionado Hora");
+            }
+            else if (CmBox_Minutos.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se ha seleccionado Minuto");
+            }
+            else if (CmBox_AMPM.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se ha Seleccionado si de mañana o de tarde");
+            }
+            else
+            {
+                switch (CmBox_AMPM.SelectedIndex)
                 {
-                    MessageBox.Show("No se ha sleccionado el Tratamiento");
-                }
-                else if (CmBox_Hora.SelectedIndex == -1)
-                {
-                    MessageBox.Show("No se ha seleccionado Hora");
-                }
-                else if (CmBox_Minutos.SelectedIndex == -1)
-                {
-                    MessageBox.Show("No se ha seleccionado Minuto");
-                }
-                else if(CmBox_AMPM.SelectedIndex == -1)
-                {
-                    MessageBox.Show("No se ha Seleccionado si de mañana o de tarde");
-                }
-                else
-                {
-                    switch(CmBox_AMPM.SelectedIndex)
-                    {
-                        case 0:
-                            Hora = Convert.ToInt32(CmBox_Hora.SelectedItem.ToString());
-                            break;
+                    case 0:
+                        Hora = Convert.ToInt32(CmBox_Hora.SelectedItem.ToString());
+                        break;
 
-                        case 1:
-                            Hora = Convert.ToInt32(CmBox_Hora.SelectedItem.ToString()) + 12;
-                            break;
-                    }
-
-                    
-                    string HoraCompleta = Hora.ToString() + ":" + CmBox_Minutos.SelectedItem.ToString() + ":00";
-                    int Tratamiento = CmBox_Tratamientos.SelectedIndex + 1;
-                    Pruebas.Text = Tratamiento.ToString();
-                    
-                    
-                    Query = "INSERT INTO `toothdentistdb`.`citas` (`ID_Cita`, `ID_Cliente`, `ID_Tratamienro`, `Fecha`, `Hora`) VALUES ('" + Cantidad.ToString() + "', '" + ID + "', '" + Tratamiento.ToString() + "', '" + Calendario.SelectionStart.ToString("yyyy/MM/dd") + "', '" + HoraCompleta + "');";
-                    SQL.EjecutarComandoInsertar(Query);
-                    
+                    case 1:
+                        Hora = Convert.ToInt32(CmBox_Hora.SelectedItem.ToString()) + 12;
+                        break;
                 }
+
+
+                string HoraCompleta = Hora.ToString() + ":" + CmBox_Minutos.SelectedItem.ToString() + ":00";
+                int Tratamiento = CmBox_Tratamientos.SelectedIndex + 1;
+                // Pruebas.Text = Tratamiento.ToString();
+
+
+                Query = "INSERT INTO `toothdentistdb`.`citas` (`ID_Cita`, `ID_Cliente`, `ID_Tratamienro`, `Fecha`, `Hora`) VALUES ('" + Cantidad.ToString() + "', '" + ID + "', '" + Tratamiento.ToString() + "', '" + Calendario.SelectionStart.ToString("yyyy/MM/dd") + "', '" + HoraCompleta + "');";
+                SQL.EjecutarComandoInsertar(Query);
+                this.Hide();
+            }
             
+        }
+
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -31,9 +31,9 @@ namespace ThootDentist
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_AgendarCita));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_AgendarCita));
             this.PanelUp = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -46,14 +46,12 @@ namespace ThootDentist
             this.Lbl_NumeroCelular = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.Lbl_Correo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.DataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Btn_AgendarCita = new Bunifu.Framework.UI.BunifuImageButton();
             this.DataGridCitas = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Pruebas = new System.Windows.Forms.Label();
+            this.Btn_TomarFoto = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PanelUp.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Foto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Btn_AgendarCita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridCitas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,20 +222,6 @@ namespace ThootDentist
             this.DataGrid.TabIndex = 15;
             this.DataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellDoubleClick);
             // 
-            // Btn_AgendarCita
-            // 
-            this.Btn_AgendarCita.BackColor = System.Drawing.Color.SeaGreen;
-            this.Btn_AgendarCita.Image = ((System.Drawing.Image)(resources.GetObject("Btn_AgendarCita.Image")));
-            this.Btn_AgendarCita.ImageActive = null;
-            this.Btn_AgendarCita.Location = new System.Drawing.Point(386, 43);
-            this.Btn_AgendarCita.Name = "Btn_AgendarCita";
-            this.Btn_AgendarCita.Size = new System.Drawing.Size(71, 71);
-            this.Btn_AgendarCita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Btn_AgendarCita.TabIndex = 19;
-            this.Btn_AgendarCita.TabStop = false;
-            this.Btn_AgendarCita.Zoom = 10;
-            this.Btn_AgendarCita.Click += new System.EventHandler(this.Btn_AgendarCita_Click);
-            // 
             // DataGridCitas
             // 
             this.DataGridCitas.AllowUserToAddRows = false;
@@ -273,23 +257,49 @@ namespace ThootDentist
             this.DataGridCitas.Size = new System.Drawing.Size(584, 361);
             this.DataGridCitas.TabIndex = 20;
             // 
-            // Pruebas
+            // Btn_TomarFoto
             // 
-            this.Pruebas.AutoSize = true;
-            this.Pruebas.Location = new System.Drawing.Point(399, 155);
-            this.Pruebas.Name = "Pruebas";
-            this.Pruebas.Size = new System.Drawing.Size(35, 13);
-            this.Pruebas.TabIndex = 21;
-            this.Pruebas.Text = "label1";
+            this.Btn_TomarFoto.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.Btn_TomarFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_TomarFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(128)))), ((int)(((byte)(121)))));
+            this.Btn_TomarFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_TomarFoto.BorderRadius = 5;
+            this.Btn_TomarFoto.ButtonText = "Agendar Cita";
+            this.Btn_TomarFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_TomarFoto.DisabledColor = System.Drawing.Color.Gray;
+            this.Btn_TomarFoto.Iconcolor = System.Drawing.Color.Transparent;
+            this.Btn_TomarFoto.Iconimage = ((System.Drawing.Image)(resources.GetObject("Btn_TomarFoto.Iconimage")));
+            this.Btn_TomarFoto.Iconimage_right = null;
+            this.Btn_TomarFoto.Iconimage_right_Selected = null;
+            this.Btn_TomarFoto.Iconimage_Selected = null;
+            this.Btn_TomarFoto.IconMarginLeft = 15;
+            this.Btn_TomarFoto.IconMarginRight = 0;
+            this.Btn_TomarFoto.IconRightVisible = true;
+            this.Btn_TomarFoto.IconRightZoom = 0D;
+            this.Btn_TomarFoto.IconVisible = true;
+            this.Btn_TomarFoto.IconZoom = 100D;
+            this.Btn_TomarFoto.IsTab = false;
+            this.Btn_TomarFoto.Location = new System.Drawing.Point(536, 154);
+            this.Btn_TomarFoto.Name = "Btn_TomarFoto";
+            this.Btn_TomarFoto.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(128)))), ((int)(((byte)(121)))));
+            this.Btn_TomarFoto.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.Btn_TomarFoto.OnHoverTextColor = System.Drawing.Color.White;
+            this.Btn_TomarFoto.selected = false;
+            this.Btn_TomarFoto.Size = new System.Drawing.Size(144, 48);
+            this.Btn_TomarFoto.TabIndex = 23;
+            this.Btn_TomarFoto.Text = "Agendar Cita";
+            this.Btn_TomarFoto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_TomarFoto.Textcolor = System.Drawing.Color.White;
+            this.Btn_TomarFoto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_TomarFoto.Click += new System.EventHandler(this.Btn_AgendarCita_Click);
             // 
             // Form_AgendarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 582);
-            this.Controls.Add(this.Pruebas);
+            this.Controls.Add(this.Btn_TomarFoto);
             this.Controls.Add(this.DataGridCitas);
-            this.Controls.Add(this.Btn_AgendarCita);
             this.Controls.Add(this.DataGrid);
             this.Controls.Add(this.Lbl_Correo);
             this.Controls.Add(this.Lbl_NumeroCelular);
@@ -308,7 +318,6 @@ namespace ThootDentist
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Foto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Btn_AgendarCita)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -329,8 +338,7 @@ namespace ThootDentist
         private Bunifu.Framework.UI.BunifuCustomLabel Lbl_NumeroCelular;
         private Bunifu.Framework.UI.BunifuCustomLabel Lbl_Correo;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DataGrid;
-        private Bunifu.Framework.UI.BunifuImageButton Btn_AgendarCita;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DataGridCitas;
-        private System.Windows.Forms.Label Pruebas;
+        private Bunifu.Framework.UI.BunifuFlatButton Btn_TomarFoto;
     }
 }

@@ -40,11 +40,9 @@ namespace ThootDentist
             this.CmBox_Hora = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Pruebas = new System.Windows.Forms.Label();
-            this.Btn_Guardar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Btn_EncenderCamara = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Btn_Guardar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,6 +69,7 @@ namespace ThootDentist
             this.Btn_Close.TabIndex = 10;
             this.Btn_Close.TabStop = false;
             this.Btn_Close.Zoom = 5;
+            this.Btn_Close.Click += new System.EventHandler(this.Btn_Close_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -223,36 +222,47 @@ namespace ThootDentist
             this.label2.TabIndex = 9;
             this.label2.Text = "Hora";
             // 
-            // Pruebas
+            // Btn_EncenderCamara
             // 
-            this.Pruebas.AutoSize = true;
-            this.Pruebas.Location = new System.Drawing.Point(269, 168);
-            this.Pruebas.Name = "Pruebas";
-            this.Pruebas.Size = new System.Drawing.Size(33, 13);
-            this.Pruebas.TabIndex = 10;
-            this.Pruebas.Text = "Label";
-            // 
-            // Btn_Guardar
-            // 
-            this.Btn_Guardar.BackColor = System.Drawing.Color.SeaGreen;
-            this.Btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Guardar.Image")));
-            this.Btn_Guardar.ImageActive = null;
-            this.Btn_Guardar.Location = new System.Drawing.Point(439, 150);
-            this.Btn_Guardar.Name = "Btn_Guardar";
-            this.Btn_Guardar.Size = new System.Drawing.Size(71, 71);
-            this.Btn_Guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Btn_Guardar.TabIndex = 11;
-            this.Btn_Guardar.TabStop = false;
-            this.Btn_Guardar.Zoom = 10;
-            this.Btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
+            this.Btn_EncenderCamara.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.Btn_EncenderCamara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(128)))), ((int)(((byte)(121)))));
+            this.Btn_EncenderCamara.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_EncenderCamara.BorderRadius = 5;
+            this.Btn_EncenderCamara.ButtonText = "Agendar la Cita";
+            this.Btn_EncenderCamara.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_EncenderCamara.DisabledColor = System.Drawing.Color.Gray;
+            this.Btn_EncenderCamara.Iconcolor = System.Drawing.Color.Transparent;
+            this.Btn_EncenderCamara.Iconimage = ((System.Drawing.Image)(resources.GetObject("Btn_EncenderCamara.Iconimage")));
+            this.Btn_EncenderCamara.Iconimage_right = null;
+            this.Btn_EncenderCamara.Iconimage_right_Selected = null;
+            this.Btn_EncenderCamara.Iconimage_Selected = null;
+            this.Btn_EncenderCamara.IconMarginLeft = 15;
+            this.Btn_EncenderCamara.IconMarginRight = 0;
+            this.Btn_EncenderCamara.IconRightVisible = true;
+            this.Btn_EncenderCamara.IconRightZoom = 0D;
+            this.Btn_EncenderCamara.IconVisible = true;
+            this.Btn_EncenderCamara.IconZoom = 80D;
+            this.Btn_EncenderCamara.IsTab = false;
+            this.Btn_EncenderCamara.Location = new System.Drawing.Point(269, 163);
+            this.Btn_EncenderCamara.Name = "Btn_EncenderCamara";
+            this.Btn_EncenderCamara.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(128)))), ((int)(((byte)(121)))));
+            this.Btn_EncenderCamara.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.Btn_EncenderCamara.OnHoverTextColor = System.Drawing.Color.White;
+            this.Btn_EncenderCamara.selected = false;
+            this.Btn_EncenderCamara.Size = new System.Drawing.Size(241, 48);
+            this.Btn_EncenderCamara.TabIndex = 36;
+            this.Btn_EncenderCamara.Text = "Agendar la Cita";
+            this.Btn_EncenderCamara.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Btn_EncenderCamara.Textcolor = System.Drawing.Color.White;
+            this.Btn_EncenderCamara.TextFont = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_EncenderCamara.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
             // AgendarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 232);
-            this.Controls.Add(this.Btn_Guardar);
-            this.Controls.Add(this.Pruebas);
+            this.Controls.Add(this.Btn_EncenderCamara);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CmBox_Hora);
@@ -261,12 +271,12 @@ namespace ThootDentist
             this.Controls.Add(this.CmBox_Tratamientos);
             this.Controls.Add(this.Calendario);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgendarCita";
             this.Text = "AgendarCita";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Btn_Guardar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,7 +294,6 @@ namespace ThootDentist
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuImageButton Btn_Close;
-        private System.Windows.Forms.Label Pruebas;
-        private Bunifu.Framework.UI.BunifuImageButton Btn_Guardar;
+        private Bunifu.Framework.UI.BunifuFlatButton Btn_EncenderCamara;
     }
 }

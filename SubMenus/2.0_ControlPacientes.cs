@@ -21,7 +21,7 @@ namespace ThootDentist
         public ControlPacientes()
         {
             InitializeComponent();
-            Pruebas.Text = Convert.ToString(Contador);
+            //Pruebas.Text = Convert.ToString(Contador);
 
             LlenarDataGrid();
         }
@@ -87,7 +87,7 @@ namespace ThootDentist
         {
             string ID = DataGridPacientes.Rows[DataGridPacientes.CurrentRow.Index].Cells[0].Value.ToString();
 
-            Pruebas.Text = ID;
+            //Pruebas.Text = ID;
 
             if (MessageBox.Show("¿Esta seguro de borrar este registro?", "Advertencia", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {

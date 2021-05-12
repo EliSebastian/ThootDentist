@@ -40,13 +40,12 @@ namespace ThootDentist
             InitializeComponent();
             BorrarErrores();
             CargarDispositivos();
-            Calendario.MaxDate = DateTime.Now;
+            Calendario.MaxDate = DateTime.Now.AddDays(1);
             
         }
         //Destructor de la clase
         ~AgregarPaciente()
         {
-            MessageBox.Show("Llamada al destructor de AgregarPaciente");
         }
 
         /*
@@ -96,7 +95,9 @@ namespace ThootDentist
             TxtBox_Correo.Text = "";
             Tx_Telefono.Text = "";
 
-            CmBox_Genero.SelectedIndex = 0;
+            CmBox_Genero.SelectedIndex = -1;
+            Calendario.SetDate(DateTime.Now);
+            PictBox_Foto.Image = null;
         }
         /*
          * METODO
@@ -298,7 +299,8 @@ namespace ThootDentist
                     Comandosql.Parameters.AddWithValue("imagen", aByte);
                     Comandosql.ExecuteNonQuery();
 
-                    MessageBox.Show("Imagen Guardada");
+                    MessageBox.Show("Se ha guardado Correctamente");
+                    VaciarForm();
                 }
                 catch(Exception ex)
                 {

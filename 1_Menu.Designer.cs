@@ -41,8 +41,6 @@ namespace ThootDentist
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelUp = new System.Windows.Forms.Panel();
-            this.LbL_Alto = new System.Windows.Forms.Label();
-            this.Lbl_Ancho = new System.Windows.Forms.Label();
             this.Btn_Restaurar = new Bunifu.Framework.UI.BunifuImageButton();
             this.Btn_Minimizar = new Bunifu.Framework.UI.BunifuImageButton();
             this.Btn_Maximizar = new Bunifu.Framework.UI.BunifuImageButton();
@@ -244,8 +242,6 @@ namespace ThootDentist
             // PanelUp
             // 
             this.PanelUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(91)))), ((int)(((byte)(86)))));
-            this.PanelUp.Controls.Add(this.LbL_Alto);
-            this.PanelUp.Controls.Add(this.Lbl_Ancho);
             this.PanelUp.Controls.Add(this.Btn_Restaurar);
             this.PanelUp.Controls.Add(this.Btn_Minimizar);
             this.PanelUp.Controls.Add(this.Btn_Maximizar);
@@ -255,26 +251,6 @@ namespace ThootDentist
             this.PanelUp.Name = "PanelUp";
             this.PanelUp.Size = new System.Drawing.Size(1000, 100);
             this.PanelUp.TabIndex = 1;
-            // 
-            // LbL_Alto
-            // 
-            this.LbL_Alto.AutoSize = true;
-            this.LbL_Alto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LbL_Alto.Location = new System.Drawing.Point(6, 22);
-            this.LbL_Alto.Name = "LbL_Alto";
-            this.LbL_Alto.Size = new System.Drawing.Size(28, 13);
-            this.LbL_Alto.TabIndex = 6;
-            this.LbL_Alto.Text = "Alto:";
-            // 
-            // Lbl_Ancho
-            // 
-            this.Lbl_Ancho.AutoSize = true;
-            this.Lbl_Ancho.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Lbl_Ancho.Location = new System.Drawing.Point(6, 9);
-            this.Lbl_Ancho.Name = "Lbl_Ancho";
-            this.Lbl_Ancho.Size = new System.Drawing.Size(44, 13);
-            this.Lbl_Ancho.TabIndex = 5;
-            this.Lbl_Ancho.Text = "Ancho: ";
             // 
             // Btn_Restaurar
             // 
@@ -385,7 +361,6 @@ namespace ThootDentist
             this.MenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelUp.ResumeLayout(false);
-            this.PanelUp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Restaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Maximizar)).EndInit();
@@ -416,7 +391,5 @@ namespace ThootDentist
         private Bunifu.Framework.UI.BunifuFlatButton Btn_Calendario;
         private Bunifu.Framework.UI.BunifuImageButton Btn_Restaurar;
         private System.Windows.Forms.Panel PanelPrincipal;
-        private System.Windows.Forms.Label LbL_Alto;
-        private System.Windows.Forms.Label Lbl_Ancho;
     }
 }

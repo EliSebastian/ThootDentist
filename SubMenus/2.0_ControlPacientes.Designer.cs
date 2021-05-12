@@ -41,7 +41,6 @@ namespace ThootDentist
             this.Btn_Borrar = new Bunifu.Framework.UI.BunifuTileButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.holaMundoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Pruebas = new System.Windows.Forms.Label();
             this.DataGridPacientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.PanelUp.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -153,15 +152,6 @@ namespace ThootDentist
             this.holaMundoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.holaMundoToolStripMenuItem.Text = "Hola mundo";
             // 
-            // Pruebas
-            // 
-            this.Pruebas.AutoSize = true;
-            this.Pruebas.Location = new System.Drawing.Point(626, 62);
-            this.Pruebas.Name = "Pruebas";
-            this.Pruebas.Size = new System.Drawing.Size(52, 21);
-            this.Pruebas.TabIndex = 7;
-            this.Pruebas.Text = "label1";
-            // 
             // DataGridPacientes
             // 
             this.DataGridPacientes.AllowUserToAddRows = false;
@@ -169,8 +159,9 @@ namespace ThootDentist
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridPacientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DataGridPacientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.DataGridPacientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DataGridPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridPacientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridPacientes.BackgroundColor = System.Drawing.Color.Gainsboro;
@@ -213,7 +204,6 @@ namespace ThootDentist
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(982, 582);
             this.Controls.Add(this.DataGridPacientes);
-            this.Controls.Add(this.Pruebas);
             this.Controls.Add(this.Btn_Borrar);
             this.Controls.Add(this.Btn_Agregar);
             this.Controls.Add(this.TxtBx_Buscar);
@@ -241,7 +231,6 @@ namespace ThootDentist
         private Bunifu.Framework.UI.BunifuTileButton Btn_Borrar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem holaMundoToolStripMenuItem;
-        private System.Windows.Forms.Label Pruebas;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DataGridPacientes;
     }
 }
