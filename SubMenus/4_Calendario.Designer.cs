@@ -31,10 +31,13 @@ namespace ThootDentist
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendario));
             this.PanelUp = new System.Windows.Forms.Panel();
             this.Title = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.Calendario3 = new System.Windows.Forms.MonthCalendar();
             this.DataGridCalendario = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.Btn_CitaLista = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.LabelPruebas = new System.Windows.Forms.Label();
             this.PanelUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridCalendario)).BeginInit();
             this.SuspendLayout();
@@ -105,12 +108,58 @@ namespace ThootDentist
             this.DataGridCalendario.Size = new System.Drawing.Size(669, 475);
             this.DataGridCalendario.TabIndex = 16;
             // 
+            // Btn_CitaLista
+            // 
+            this.Btn_CitaLista.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.Btn_CitaLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(128)))), ((int)(((byte)(121)))));
+            this.Btn_CitaLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_CitaLista.BorderRadius = 5;
+            this.Btn_CitaLista.ButtonText = "Marcar Cita";
+            this.Btn_CitaLista.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_CitaLista.DisabledColor = System.Drawing.Color.Gray;
+            this.Btn_CitaLista.Iconcolor = System.Drawing.Color.Transparent;
+            this.Btn_CitaLista.Iconimage = ((System.Drawing.Image)(resources.GetObject("Btn_CitaLista.Iconimage")));
+            this.Btn_CitaLista.Iconimage_right = null;
+            this.Btn_CitaLista.Iconimage_right_Selected = null;
+            this.Btn_CitaLista.Iconimage_Selected = null;
+            this.Btn_CitaLista.IconMarginLeft = 50;
+            this.Btn_CitaLista.IconMarginRight = 0;
+            this.Btn_CitaLista.IconRightVisible = true;
+            this.Btn_CitaLista.IconRightZoom = 0D;
+            this.Btn_CitaLista.IconVisible = true;
+            this.Btn_CitaLista.IconZoom = 90D;
+            this.Btn_CitaLista.IsTab = false;
+            this.Btn_CitaLista.Location = new System.Drawing.Point(25, 236);
+            this.Btn_CitaLista.Name = "Btn_CitaLista";
+            this.Btn_CitaLista.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(128)))), ((int)(((byte)(121)))));
+            this.Btn_CitaLista.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.Btn_CitaLista.OnHoverTextColor = System.Drawing.Color.White;
+            this.Btn_CitaLista.selected = false;
+            this.Btn_CitaLista.Size = new System.Drawing.Size(248, 48);
+            this.Btn_CitaLista.TabIndex = 37;
+            this.Btn_CitaLista.Text = "Marcar Cita";
+            this.Btn_CitaLista.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_CitaLista.Textcolor = System.Drawing.Color.White;
+            this.Btn_CitaLista.TextFont = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_CitaLista.Click += new System.EventHandler(this.Btn_CitaLista_Click);
+            // 
+            // LabelPruebas
+            // 
+            this.LabelPruebas.AutoSize = true;
+            this.LabelPruebas.Location = new System.Drawing.Point(22, 311);
+            this.LabelPruebas.Name = "LabelPruebas";
+            this.LabelPruebas.Size = new System.Drawing.Size(43, 13);
+            this.LabelPruebas.TabIndex = 38;
+            this.LabelPruebas.Text = "Puebas";
+            // 
             // Calendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(966, 543);
+            this.Controls.Add(this.LabelPruebas);
+            this.Controls.Add(this.Btn_CitaLista);
             this.Controls.Add(this.DataGridCalendario);
             this.Controls.Add(this.Calendario3);
             this.Controls.Add(this.PanelUp);
@@ -121,6 +170,7 @@ namespace ThootDentist
             this.PanelUp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridCalendario)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -130,5 +180,7 @@ namespace ThootDentist
         private Bunifu.Framework.UI.BunifuCustomLabel Title;
         private System.Windows.Forms.MonthCalendar Calendario3;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DataGridCalendario;
+        private Bunifu.Framework.UI.BunifuFlatButton Btn_CitaLista;
+        private System.Windows.Forms.Label LabelPruebas;
     }
 }

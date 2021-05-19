@@ -107,6 +107,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SubMenus\3.2_ReasignarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubMenus\3.2_ReasignarCita.Designer.cs">
+      <DependentUpon>3.2_ReasignarCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubMenus\4.1_MarcarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubMenus\4.1_MarcarCita.Designer.cs">
+      <DependentUpon>4.1_MarcarCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubMenus\3.0_ControlCitas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,11 +165,17 @@
     <Compile Include="SubMenus\3.1_AgendarCita.Designer.cs">
       <DependentUpon>3.1_AgendarCita.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SubMenus\3.2_ReasignarCita.resx">
+      <DependentUpon>3.2_ReasignarCita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubMenus\3.0_ControlCitas.resx">
       <DependentUpon>3.0_ControlCitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubMenus\2.1_AgregarPaciente.resx">
       <DependentUpon>2.1_AgregarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubMenus\4.1_MarcarCita.resx">
+      <DependentUpon>4.1_MarcarCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubMenus\4_Calendario.resx">
       <DependentUpon>4_Calendario.cs</DependentUpon>

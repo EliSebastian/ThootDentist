@@ -142,6 +142,7 @@ namespace ThootDentist
             this.TxBox_Nombres.Size = new System.Drawing.Size(512, 25);
             this.TxBox_Nombres.TabIndex = 1;
             this.TxBox_Nombres.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxBox_Nombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBox_Nombres_KeyPress);
             // 
             // bunifuCustomLabel3
             // 
@@ -241,6 +242,7 @@ namespace ThootDentist
             this.TxtBox_Correo.Size = new System.Drawing.Size(512, 25);
             this.TxtBox_Correo.TabIndex = 7;
             this.TxtBox_Correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtBox_Correo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBox_Correo_KeyPress);
             // 
             // bunifuCustomLabel8
             // 
@@ -279,6 +281,7 @@ namespace ThootDentist
             this.TxBox_ApellidoPa.Size = new System.Drawing.Size(250, 25);
             this.TxBox_ApellidoPa.TabIndex = 2;
             this.TxBox_ApellidoPa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxBox_ApellidoPa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBox_Apellido_P_KeyPress);
             // 
             // TxBox_ApellidoMa
             // 
@@ -297,10 +300,12 @@ namespace ThootDentist
             this.TxBox_ApellidoMa.Size = new System.Drawing.Size(250, 25);
             this.TxBox_ApellidoMa.TabIndex = 3;
             this.TxBox_ApellidoMa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxBox_ApellidoMa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBox_Apellido_M_KeyPress);
             // 
             // PictBox_Foto
             // 
             this.PictBox_Foto.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.PictBox_Foto.InitialImage = ((System.Drawing.Image)(resources.GetObject("PictBox_Foto.InitialImage")));
             this.PictBox_Foto.Location = new System.Drawing.Point(629, 123);
             this.PictBox_Foto.Name = "PictBox_Foto";
             this.PictBox_Foto.Size = new System.Drawing.Size(320, 180);

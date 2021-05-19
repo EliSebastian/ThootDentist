@@ -48,6 +48,7 @@ namespace ThootDentist
             this.DataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.DataGridCitas = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Btn_TomarFoto = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.Btn_ReagendarCita = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PanelUp.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Foto)).BeginInit();
@@ -293,11 +294,48 @@ namespace ThootDentist
             this.Btn_TomarFoto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_TomarFoto.Click += new System.EventHandler(this.Btn_AgendarCita_Click);
             // 
+            // Btn_ReagendarCita
+            // 
+            this.Btn_ReagendarCita.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.Btn_ReagendarCita.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_ReagendarCita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(128)))), ((int)(((byte)(121)))));
+            this.Btn_ReagendarCita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_ReagendarCita.BorderRadius = 5;
+            this.Btn_ReagendarCita.ButtonText = "Reagendar Cita";
+            this.Btn_ReagendarCita.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_ReagendarCita.DisabledColor = System.Drawing.Color.Gray;
+            this.Btn_ReagendarCita.Iconcolor = System.Drawing.Color.Transparent;
+            this.Btn_ReagendarCita.Iconimage = ((System.Drawing.Image)(resources.GetObject("Btn_ReagendarCita.Iconimage")));
+            this.Btn_ReagendarCita.Iconimage_right = null;
+            this.Btn_ReagendarCita.Iconimage_right_Selected = null;
+            this.Btn_ReagendarCita.Iconimage_Selected = null;
+            this.Btn_ReagendarCita.IconMarginLeft = 15;
+            this.Btn_ReagendarCita.IconMarginRight = 0;
+            this.Btn_ReagendarCita.IconRightVisible = true;
+            this.Btn_ReagendarCita.IconRightZoom = 0D;
+            this.Btn_ReagendarCita.IconVisible = true;
+            this.Btn_ReagendarCita.IconZoom = 100D;
+            this.Btn_ReagendarCita.IsTab = false;
+            this.Btn_ReagendarCita.Location = new System.Drawing.Point(386, 155);
+            this.Btn_ReagendarCita.Name = "Btn_ReagendarCita";
+            this.Btn_ReagendarCita.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(128)))), ((int)(((byte)(121)))));
+            this.Btn_ReagendarCita.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.Btn_ReagendarCita.OnHoverTextColor = System.Drawing.Color.White;
+            this.Btn_ReagendarCita.selected = false;
+            this.Btn_ReagendarCita.Size = new System.Drawing.Size(144, 48);
+            this.Btn_ReagendarCita.TabIndex = 24;
+            this.Btn_ReagendarCita.Text = "Reagendar Cita";
+            this.Btn_ReagendarCita.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_ReagendarCita.Textcolor = System.Drawing.Color.White;
+            this.Btn_ReagendarCita.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ReagendarCita.Click += new System.EventHandler(this.Btn_ReagendarCita_Click);
+            // 
             // Form_AgendarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 582);
+            this.Controls.Add(this.Btn_ReagendarCita);
             this.Controls.Add(this.Btn_TomarFoto);
             this.Controls.Add(this.DataGridCitas);
             this.Controls.Add(this.DataGrid);
@@ -340,5 +378,6 @@ namespace ThootDentist
         private Bunifu.Framework.UI.BunifuCustomDataGrid DataGrid;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DataGridCitas;
         private Bunifu.Framework.UI.BunifuFlatButton Btn_TomarFoto;
+        private Bunifu.Framework.UI.BunifuFlatButton Btn_ReagendarCita;
     }
 }

@@ -22,7 +22,6 @@ namespace ThootDentist
         private int TipoInsert = 0; //1 es Ambos    2 es de Telefono    3 es de Correo
 
         private int I = 0;  //Contador para estructuras For
-        public string Path = @"D:\eseba\Documents\Proyects\C#\ToothDentist\ThootDentist\Fotos";  //Ruta para alpacenamiento de imagenes
 
         private bool Dispositivos;  //Es para comprobar si existen dispositivos de entrada
 
@@ -41,7 +40,8 @@ namespace ThootDentist
             BorrarErrores();
             CargarDispositivos();
             Calendario.MaxDate = DateTime.Now.AddDays(1);
-            
+            PictBox_Foto.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Imagenes\\Sin_Imagen.png"));
+
         }
         //Destructor de la clase
         ~AgregarPaciente()
@@ -97,7 +97,7 @@ namespace ThootDentist
 
             CmBox_Genero.SelectedIndex = -1;
             Calendario.SetDate(DateTime.Now);
-            PictBox_Foto.Image = null;
+            PictBox_Foto.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Imagenes\\Sin_Imagen.png"));
         }
         /*
          * METODO
@@ -327,12 +327,24 @@ namespace ThootDentist
         {
             this.Close();
             GC.Collect(0);
+            VaciarForm();
         }
 
         private void Tx_Telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
+            if (char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar))
+            {
+                if(e.KeyChar == (char)Keys.Back || Tx_Telefono.Text.Length < 10)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+                
+            }
+            else
             {
                 e.Handled = true;
             }
@@ -363,5 +375,83 @@ namespace ThootDentist
         {
             CerrarCamara();
         }
+
+        private void TxBox_Nombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space) || e.KeyChar == (char)Keys.Back)
+            {
+                if(e.KeyChar == (char)Keys.Back || TxBox_Nombres.Text.Length < 30)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void TxBox_Apellido_P_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space) || e.KeyChar == (char)Keys.Back)
+            {
+                if (e.KeyChar == (char)Keys.Back || TxBox_ApellidoPa.Text.Length < 15)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxBox_Apellido_M_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            {
+                if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space) || e.KeyChar == (char)Keys.Back)
+                {
+                    if (e.KeyChar == (char)Keys.Back || TxBox_ApellidoMa.Text.Length < 15)
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void TxtBox_Correo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            {
+                if (e.KeyChar == (char)Keys.Back || TxtBox_Correo.Text.Length < 40)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
     }
 }
+

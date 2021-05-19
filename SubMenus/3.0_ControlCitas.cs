@@ -19,7 +19,7 @@ namespace ThootDentist
 
             //Me Pasa los datos de las Citas del paciente al DataGrid
             
-            Query = "SELECT tratamientos.Nombre_Tratamiento, citas.Fecha,citas.Hora, citas.Comentario FROM citas  JOIN pacientes on citas.ID_Cliente = pacientes.ID_Cliente JOIN tratamientos on citas.ID_Tratamienro = tratamientos.ID_Tratamiento WHERE(citas.ID_Cliente = '0') AND (pacientes.Activo = 1)";
+            Query = "SELECT citas.ID_Cita,tratamientos.Nombre_Tratamiento, citas.Fecha,citas.Hora, citas.Comentario FROM citas  JOIN pacientes on citas.ID_Cliente = pacientes.ID_Cliente JOIN tratamientos on citas.ID_Tratamienro = tratamientos.ID_Tratamiento WHERE(citas.ID_Cliente = '0') AND (pacientes.Activo = 1)";
             DataGridCitas.DataSource = SQL.EjecutarComando_Datos(Query);
         }
         //Destructor de la clase
@@ -93,7 +93,16 @@ namespace ThootDentist
 
                 //Me Pasa los datos de las Citas del paciente al DataGrid
                 //Pruebas.Text = Index;
-                Query = "SELECT tratamientos.Nombre_Tratamiento, citas.Fecha,citas.Hora, citas.Comentario FROM citas  JOIN pacientes on citas.ID_Cliente = pacientes.ID_Cliente JOIN tratamientos on citas.ID_Tratamienro = tratamientos.ID_Tratamiento WHERE(citas.ID_Cliente = '"+ Index +"')";
+                Query = "SELECT citas.ID_Cita, tratamientos.Nombre_Tratamiento, citas.Fecha,citas.Hora,\n" +
+                    "CASE\n" +
+                    "WHEN EstadoConsulta = 0 THEN 'Pendiente'\n" +
+                    "WHEN EstadoConsulta = 1 THEN 'Realizada'\n" +
+                    "WHEN EstadoConsulta = 2 THEN 'Cancelada'\n" +
+                    "END AS 'Estado',\n" +
+                    "citas.Comentario\n" +
+                    "FROM citas\n" +
+                    "JOIN pacientes on citas.ID_Cliente = pacientes.ID_Cliente\n" +
+                    "JOIN tratamientos on citas.ID_Tratamienro = tratamientos.ID_Tratamiento WHERE citas.ID_Cliente = "+ Index +";";
                 DataGridCitas.DataSource = SQL.EjecutarComando_Datos(Query);
 
                 MySqlConnection Conexion = SQL.Conectar();
@@ -135,6 +144,20 @@ namespace ThootDentist
                 MessageBox.Show("No se ha seleccionado Ningun Usuario");
             }
 
+        }
+
+        private void Btn_ReagendarCita_Click(object sender, EventArgs e)
+        {
+            if(DataGridCitas.Rows.Count < 1)
+            {
+                MessageBox.Show("No se encuentran citas","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+            {
+                string Index = DataGridCitas.Rows[DataGridCitas.CurrentRow.Index].Cells[0].Value.ToString();
+                Reasignar_Cita Reasignar = new Reasignar_Cita(Index);
+                Reasignar.ShowDialog();
+            }
         }
     }
 }

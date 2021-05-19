@@ -12,7 +12,6 @@ namespace ThootDentist
 {
     public partial class ControlPacientes : Form
     {
-        int Contador = 0;
         Conexiones SQL = new Conexiones();
 
         AgregarPaciente FormAgregrarPaciente = new AgregarPaciente();

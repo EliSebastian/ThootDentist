@@ -31,7 +31,7 @@ namespace ThootDentist
 
         /*Declaracion de Variables*/
         string Query;
-
+        string Index;
 
         /*Metodos*/
         private void LlamadaCalendario()
@@ -39,10 +39,11 @@ namespace ThootDentist
             string Fecha = Calendario3.SelectionStart.ToString("yyyy/MM/dd");
 
 
-            Query = "SELECT citas.ID_Cita,citas.Hora,CONCAT(Pacientes.Nombres, ' ', Pacientes.Apellido_Paterno, ' ', Pacientes.Apellido_Materno) AS 'Nombre Completo',\n" +
+            Query = "SELECT citas.ID_Cita,citas.Hora,CONCAT(Pacientes.Nombres,' ',Pacientes.Apellido_Paterno,' ',Pacientes.Apellido_Materno) AS 'Nombre Completo',\n" +
                 "CASE\n" +
                 "WHEN EstadoConsulta = 0 THEN 'Pendiente'\n" +
                 "WHEN EstadoConsulta = 1 THEN 'Realizada'\n" +
+                "WHEN EstadoConsulta = 2 THEN 'Cancelada'\n" +
                 "END AS 'Estado'\n" +
                 "FROM Citas\n" +
                 "JOIN Pacientes ON Citas.ID_Cliente = Pacientes.ID_Cliente\n" +
@@ -52,11 +53,29 @@ namespace ThootDentist
 
             DataGridCalendario.DataSource = Tabla;
         }
-
+       
         /*Metodos Controlados por eventos*/
         private void Calendario3_DateSelected(object sender, DateRangeEventArgs e)
         {
             LlamadaCalendario();
+        }
+
+        private void Btn_CitaLista_Click(object sender, EventArgs e)
+        {
+            if(DataGridCalendario.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay citas en el dia seleccionado","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+            {
+
+                Index = DataGridCalendario.Rows[DataGridCalendario.CurrentRow.Index].Cells[0].Value.ToString();
+                LabelPruebas.Text = Index;
+                
+                MarcarCita From = new MarcarCita(Index);
+                From.ShowDialog();
+                LlamadaCalendario();
+            }
         }
     }
 }
