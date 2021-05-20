@@ -29,6 +29,7 @@ namespace ThootDentist
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             this.Up = new System.Windows.Forms.Panel();
             this.BtnClose = new Bunifu.Framework.UI.BunifuImageButton();
@@ -42,6 +43,7 @@ namespace ThootDentist
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.TxtBx_Usuario = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.Up.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -161,7 +163,7 @@ namespace ThootDentist
             this.Lbl_ErrorContraseña.AutoSize = true;
             this.Lbl_ErrorContraseña.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_ErrorContraseña.ForeColor = System.Drawing.Color.DarkRed;
-            this.Lbl_ErrorContraseña.Location = new System.Drawing.Point(162, 214);
+            this.Lbl_ErrorContraseña.Location = new System.Drawing.Point(175, 214);
             this.Lbl_ErrorContraseña.Name = "Lbl_ErrorContraseña";
             this.Lbl_ErrorContraseña.Size = new System.Drawing.Size(40, 15);
             this.Lbl_ErrorContraseña.TabIndex = 5;
@@ -190,9 +192,9 @@ namespace ThootDentist
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(46, 199);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(112, 30);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(123, 30);
             this.bunifuCustomLabel1.TabIndex = 11;
-            this.bunifuCustomLabel1.Text = "Contrseña";
+            this.bunifuCustomLabel1.Text = "Contraseña";
             // 
             // TxtBx_Usuario
             // 
@@ -220,6 +222,13 @@ namespace ThootDentist
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(88, 30);
             this.bunifuCustomLabel2.TabIndex = 13;
             this.bunifuCustomLabel2.Text = "Usuario";
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.Up;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // LogIn
             // 
@@ -266,6 +275,7 @@ namespace ThootDentist
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuMetroTextbox TxtBx_Usuario;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
 

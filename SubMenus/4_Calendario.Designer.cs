@@ -37,7 +37,6 @@ namespace ThootDentist
             this.Calendario3 = new System.Windows.Forms.MonthCalendar();
             this.DataGridCalendario = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Btn_CitaLista = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.LabelPruebas = new System.Windows.Forms.Label();
             this.PanelUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridCalendario)).BeginInit();
             this.SuspendLayout();
@@ -143,22 +142,12 @@ namespace ThootDentist
             this.Btn_CitaLista.TextFont = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_CitaLista.Click += new System.EventHandler(this.Btn_CitaLista_Click);
             // 
-            // LabelPruebas
-            // 
-            this.LabelPruebas.AutoSize = true;
-            this.LabelPruebas.Location = new System.Drawing.Point(22, 311);
-            this.LabelPruebas.Name = "LabelPruebas";
-            this.LabelPruebas.Size = new System.Drawing.Size(43, 13);
-            this.LabelPruebas.TabIndex = 38;
-            this.LabelPruebas.Text = "Puebas";
-            // 
             // Calendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(966, 543);
-            this.Controls.Add(this.LabelPruebas);
             this.Controls.Add(this.Btn_CitaLista);
             this.Controls.Add(this.DataGridCalendario);
             this.Controls.Add(this.Calendario3);
@@ -170,7 +159,6 @@ namespace ThootDentist
             this.PanelUp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridCalendario)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -181,6 +169,5 @@ namespace ThootDentist
         private System.Windows.Forms.MonthCalendar Calendario3;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DataGridCalendario;
         private Bunifu.Framework.UI.BunifuFlatButton Btn_CitaLista;
-        private System.Windows.Forms.Label LabelPruebas;
     }
 }

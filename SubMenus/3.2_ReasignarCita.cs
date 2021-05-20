@@ -18,7 +18,7 @@ namespace ThootDentist
             InitializeComponent();
             LlenarTratamientos();
             ID = IDCita;
-            label3.Text = ID;
+            //label3.Text = ID;
         }
 
         Conexiones SQL = new Conexiones();
@@ -51,19 +51,19 @@ namespace ThootDentist
 
             if (CmBox_Tratamientos.SelectedIndex == -1)
             {
-                MessageBox.Show("No se ha sleccionado el Tratamiento");
+                MessageBox.Show("No se ha sleccionado el Tratamiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (CmBox_Hora.SelectedIndex == -1)
             {
-                MessageBox.Show("No se ha seleccionado Hora");
+                MessageBox.Show("No se ha seleccionado Hora", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (CmBox_Minutos.SelectedIndex == -1)
             {
-                MessageBox.Show("No se ha seleccionado Minuto");
+                MessageBox.Show("No se ha seleccionado Minuto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (CmBox_AMPM.SelectedIndex == -1)
             {
-                MessageBox.Show("No se ha Seleccionado si de mañana o de tarde");
+                MessageBox.Show("No se ha Seleccionado si de mañana o de tarde", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -86,13 +86,14 @@ namespace ThootDentist
                 Query = "SELECT ID_Cita FROM citas WHERE Fecha = '" + Calendario.SelectionStart.ToString("yyyy/MM/dd") + "' AND Hora = '" + HoraCompleta + "' AND EstadoConsulta = 0;";
                 if (SQL.EjecutarComando_Bool(Query))
                 {
-                    MessageBox.Show("Ya existe");
+                    MessageBox.Show("La la fecha y el horario seleccionado ya se encuentra ocupado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     Query = "UPDATE citas SET Fecha = '"+ Calendario.SelectionStart.ToString("yyyy/MM/dd") + "', Hora = '"+ HoraCompleta +"', ID_Tratamienro = "+ Tratamiento +" WHERE ID_Cita = "+ ID + ";" ;
                     SQL.EjecutarComandoInsertar(Query);
                     this.Hide();
+                    MessageBox.Show("Se ha reagendado correctamente","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
 
@@ -101,11 +102,6 @@ namespace ThootDentist
         private void Btn_Close_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void Btn_Close_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
         }
     }
 }

@@ -29,6 +29,7 @@ namespace ThootDentist
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reasignar_Cita));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Close = new Bunifu.Framework.UI.BunifuImageButton();
@@ -41,7 +42,7 @@ namespace ThootDentist
             this.CmBox_AMPM = new System.Windows.Forms.ComboBox();
             this.CmBox_Tratamientos = new System.Windows.Forms.ComboBox();
             this.Calendario = new System.Windows.Forms.MonthCalendar();
-            this.label3 = new System.Windows.Forms.Label();
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Close)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +71,7 @@ namespace ThootDentist
             this.Btn_Close.TabIndex = 10;
             this.Btn_Close.TabStop = false;
             this.Btn_Close.Zoom = 5;
-            this.Btn_Close.Click += new System.EventHandler(this.Btn_Close_Click_1);
+            this.Btn_Close.Click += new System.EventHandler(this.Btn_Close_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -258,21 +259,18 @@ namespace ThootDentist
             this.Calendario.Name = "Calendario";
             this.Calendario.TabIndex = 37;
             // 
-            // label3
+            // bunifuDragControl2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(385, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "label3";
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.panel1;
+            this.bunifuDragControl2.Vertical = true;
             // 
             // Reasignar_Cita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 232);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.Btn_EncenderCamara);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -306,6 +304,6 @@ namespace ThootDentist
         private System.Windows.Forms.ComboBox CmBox_AMPM;
         private System.Windows.Forms.ComboBox CmBox_Tratamientos;
         private System.Windows.Forms.MonthCalendar Calendario;
-        private System.Windows.Forms.Label label3;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
     }
 }

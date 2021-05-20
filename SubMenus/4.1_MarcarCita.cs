@@ -44,7 +44,7 @@ namespace ThootDentist
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Seleccione la marca a aplicar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

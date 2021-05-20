@@ -70,7 +70,7 @@ namespace ThootDentist
             {
 
                 Index = DataGridCalendario.Rows[DataGridCalendario.CurrentRow.Index].Cells[0].Value.ToString();
-                LabelPruebas.Text = Index;
+                //LabelPruebas.Text = Index;
                 
                 MarcarCita From = new MarcarCita(Index);
                 From.ShowDialog();

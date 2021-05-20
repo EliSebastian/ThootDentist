@@ -84,18 +84,27 @@ namespace ThootDentist
 
         private void Btn_Borrar_Click(object sender, EventArgs e)
         {
-            string ID = DataGridPacientes.Rows[DataGridPacientes.CurrentRow.Index].Cells[0].Value.ToString();
-
-            //Pruebas.Text = ID;
-
-            if (MessageBox.Show("¿Esta seguro de borrar este registro?", "Advertencia", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if(DataGridPacientes.Rows.Count < 1)
             {
-                Query = "UPDATE pacientes set Activo = 0 WHERE(ID_Cliente = " + ID + ")";
-                SQL.EjecutarComandoInsertar(Query);
+                MessageBox.Show("No se encuentran pacientes");
             }
-            
+            else
+            {
 
-            LlenarDataGrid();
+                string ID = DataGridPacientes.Rows[DataGridPacientes.CurrentRow.Index].Cells[0].Value.ToString();
+
+                //Pruebas.Text = ID;
+
+                if (MessageBox.Show("¿Esta seguro de borrar este registro?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    Query = "UPDATE pacientes set Activo = 0 WHERE(ID_Cliente = " + ID + ")";
+                    SQL.EjecutarComandoInsertar(Query);
+                }
+
+
+                LlenarDataGrid();
+            }
+           
         }
     }
 }

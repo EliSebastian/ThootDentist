@@ -52,19 +52,19 @@ namespace ThootDentist
 
             if (CmBox_Tratamientos.SelectedIndex == -1)
             {
-                MessageBox.Show("No se ha sleccionado el Tratamiento");
+                MessageBox.Show("No se ha sleccionado el Tratamiento","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else if (CmBox_Hora.SelectedIndex == -1)
             {
-                MessageBox.Show("No se ha seleccionado Hora");
+                MessageBox.Show("No se ha seleccionado Hora", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (CmBox_Minutos.SelectedIndex == -1)
             {
-                MessageBox.Show("No se ha seleccionado Minuto");
+                MessageBox.Show("No se ha seleccionado Minuto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (CmBox_AMPM.SelectedIndex == -1)
             {
-                MessageBox.Show("No se ha Seleccionado si de mañana o de tarde");
+                MessageBox.Show("No se ha Seleccionado si de mañana o de tarde", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -87,13 +87,14 @@ namespace ThootDentist
                 Query = "SELECT ID_Cita FROM citas WHERE Fecha = '"+ Calendario.SelectionStart.ToString("yyyy/MM/dd") + "' AND Hora = '"+ HoraCompleta + "' AND EstadoConsulta = 0;";
                 if(SQL.EjecutarComando_Bool(Query))
                 {
-                    MessageBox.Show("Ya existe");
+                    MessageBox.Show("La la fecha y el horario seleccionado ya se encuentra ocupado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     Query = "INSERT INTO `toothdentistdb`.`citas` (`ID_Cita`, `ID_Cliente`, `ID_Tratamienro`, `Fecha`, `Hora`) VALUES ('" + Cantidad.ToString() + "', '" + ID + "', '" + Tratamiento.ToString() + "', '" + Calendario.SelectionStart.ToString("yyyy/MM/dd") + "', '" + HoraCompleta + "');";
                     SQL.EjecutarComandoInsertar(Query);
                     this.Hide();
+                    MessageBox.Show("Se ha Agendado corectamente","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
             

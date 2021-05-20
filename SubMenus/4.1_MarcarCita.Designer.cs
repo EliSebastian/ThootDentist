@@ -95,9 +95,9 @@ namespace ThootDentist
             // 
             // TxBox_Comentario
             // 
-            this.TxBox_Comentario.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.TxBox_Comentario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxBox_Comentario.ForeColor = System.Drawing.SystemColors.Control;
+            this.TxBox_Comentario.BackColor = System.Drawing.SystemColors.Control;
+            this.TxBox_Comentario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxBox_Comentario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.TxBox_Comentario.Location = new System.Drawing.Point(12, 65);
             this.TxBox_Comentario.Multiline = true;
             this.TxBox_Comentario.Name = "TxBox_Comentario";
@@ -118,7 +118,7 @@ namespace ThootDentist
             this.Btn_MarcarCita.LabelPosition = 36;
             this.Btn_MarcarCita.LabelText = "Marcar Cita";
             this.Btn_MarcarCita.Location = new System.Drawing.Point(387, 124);
-            this.Btn_MarcarCita.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_MarcarCita.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_MarcarCita.Name = "Btn_MarcarCita";
             this.Btn_MarcarCita.Size = new System.Drawing.Size(110, 110);
             this.Btn_MarcarCita.TabIndex = 7;

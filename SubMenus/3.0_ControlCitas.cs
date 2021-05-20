@@ -123,7 +123,7 @@ namespace ThootDentist
             }
             catch
             {
-                MessageBox.Show("Error \n El cliente Seleccionado no ha tenido o tiene alguna cita programada");
+                MessageBox.Show("El cliente Seleccionado no ha tenido o tiene alguna cita programada", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
             
@@ -137,11 +137,23 @@ namespace ThootDentist
             if(Convert.ToInt32(Index) > 0)
             {
                 AgendarCita FormAgendarCita = new AgendarCita(Index);
-                FormAgendarCita.Show();
+                FormAgendarCita.ShowDialog();
+                Query = "SELECT citas.ID_Cita, tratamientos.Nombre_Tratamiento, citas.Fecha,citas.Hora,\n" +
+                   "CASE\n" +
+                   "WHEN EstadoConsulta = 0 THEN 'Pendiente'\n" +
+                   "WHEN EstadoConsulta = 1 THEN 'Realizada'\n" +
+                   "WHEN EstadoConsulta = 2 THEN 'Cancelada'\n" +
+                   "END AS 'Estado',\n" +
+                   "citas.Comentario\n" +
+                   "FROM citas\n" +
+                   "JOIN pacientes on citas.ID_Cliente = pacientes.ID_Cliente\n" +
+                   "JOIN tratamientos on citas.ID_Tratamienro = tratamientos.ID_Tratamiento WHERE citas.ID_Cliente = " + Index + ";";
+                DataGridCitas.DataSource = SQL.EjecutarComando_Datos(Query);
+
             }
             else
             {
-                MessageBox.Show("No se ha seleccionado Ningun Usuario");
+                MessageBox.Show("No se ha seleccionado Ningun Usuario","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }
@@ -157,6 +169,18 @@ namespace ThootDentist
                 string Index = DataGridCitas.Rows[DataGridCitas.CurrentRow.Index].Cells[0].Value.ToString();
                 Reasignar_Cita Reasignar = new Reasignar_Cita(Index);
                 Reasignar.ShowDialog();
+                Query = "SELECT citas.ID_Cita, tratamientos.Nombre_Tratamiento, citas.Fecha,citas.Hora,\n" +
+                   "CASE\n" +
+                   "WHEN EstadoConsulta = 0 THEN 'Pendiente'\n" +
+                   "WHEN EstadoConsulta = 1 THEN 'Realizada'\n" +
+                   "WHEN EstadoConsulta = 2 THEN 'Cancelada'\n" +
+                   "END AS 'Estado',\n" +
+                   "citas.Comentario\n" +
+                   "FROM citas\n" +
+                   "JOIN pacientes on citas.ID_Cliente = pacientes.ID_Cliente\n" +
+                   "JOIN tratamientos on citas.ID_Tratamienro = tratamientos.ID_Tratamiento WHERE citas.ID_Cliente = " + Index + ";";
+                DataGridCitas.DataSource = SQL.EjecutarComando_Datos(Query);
+
             }
         }
     }

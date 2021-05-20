@@ -29,6 +29,7 @@ namespace ThootDentist
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgendarCita));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Close = new Bunifu.Framework.UI.BunifuImageButton();
@@ -41,6 +42,7 @@ namespace ThootDentist
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Btn_EncenderCamara = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Close)).BeginInit();
             this.SuspendLayout();
@@ -257,6 +259,13 @@ namespace ThootDentist
             this.Btn_EncenderCamara.TextFont = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_EncenderCamara.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // AgendarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,5 +304,6 @@ namespace ThootDentist
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuImageButton Btn_Close;
         private Bunifu.Framework.UI.BunifuFlatButton Btn_EncenderCamara;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
